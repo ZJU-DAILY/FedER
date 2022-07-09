@@ -11,7 +11,7 @@ FedER, an effective and privacy-preserving deep entity resolution framework powe
 * HuggingFace Transformers 4.9.2
 * NVIDIA Apex (fp16 training) 
 
-Please refer to the source code to install all required packages in Python
+Please refer to the source code to install all required packages in Python.
 
 ## Datasets
 
