@@ -18,7 +18,6 @@ def parse_options(parser):
     parser.add_argument("--lm", type=str, default='bert-base-uncased')
     parser.add_argument("--fp16", dest="fp16", action="store_false")
     parser.add_argument("--alpha_aug", type=float, default=0.8)
-
     parser.add_argument("--summarize", dest="summarize", action="store_true")
     parser.add_argument("--size", type=int, default=None)
     parser.add_argument('--device', type=str, default='cuda:0')
@@ -35,7 +34,6 @@ def parse_options(parser):
     parser.add_argument('--dp_mechanism', type=str, default='Laplace') #'no_dp'  'Laplace'  'Gaussian'
     parser.add_argument('--dp_clip', type=int, default = 10)
     parser.add_argument('--dp_epsilon', type = float, default = 0.15) #run 0.001
-    # parser.add_argument('-add_noise', type=int, default=0)
     parser.add_argument('--key_position', type=str, default=None)  # multi att '0 1 2...'
     parser.add_argument('-port', type=int, default=8800)
     parser.add_argument('--t', type=float, default=0.08)
@@ -45,22 +43,7 @@ def parse_options(parser):
     parser.add_argument('--path1', type=str, default="./dataset/Structure/DBLP-ACM/train1.txt")
     parser.add_argument('--path2', type=str, default="./dataset/Structure/DBLP-ACM/train2.txt")
     parser.add_argument('--match_path', type=str, default="./dataset/Structure/DBLP-ACM/match.txt")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return parser.parse_args()
-
 
 if __name__ == '__main__':
     begin =time.time()
@@ -141,7 +124,6 @@ if __name__ == '__main__':
         drop_last=False,
         collate_fn=padder
     )
-
 
     p1 = mp.Process(target=clien1.train, args=(args, loader1, eval_loader1, set1_id2t, set2_id2t, set1_size,))
     p2 = mp.Process(target=clien2.train, args=(args, loader2, eval_loader2,set2_size,))
