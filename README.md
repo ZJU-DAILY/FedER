@@ -17,7 +17,7 @@ Please refer to the source code to install all required packages in Python.
 
 We conduct experiments on five datasets, including DBLP-ACM, Walmart-Amazon, Amazon-Google, DBLP-ACM(Dirty), and Walmart-Amazon(Dirty). We provide all the datasets. 
 
-##Run Experimental Case
+## Run Experimental Case
 
 To conduct the FedER for effective and privacy-preserving deep entity resolution on DBLP-ACM:
 
